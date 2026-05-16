@@ -1,0 +1,75 @@
+# Copy to config.yml. Each entry under `targets` is one referral site.
+# `enabled: false` skips it without deleting config.
+
+global:
+  max_concurrency: 3          # how many signups run in parallel
+  per_target_cooldown_sec: 90 # min seconds between two signups on the same target
+  jitter_sec: [15, 75]        # random delay added before each run
+  daily_cap_per_target: 25    # safety cap so you don't burn a target in a day
+  retries: 2
+
+# Postback listener: networks ping this URL when a referral converts.
+# Configure your affiliate dashboard postback to:
+#   https://YOUR_HOST:PORT/postback?subid={subid}&payout={amount}&secret=YOUR_SECRET
+webhook:
+  enabled: true
+  host: 0.0.0.0
+  port: 8080
+  secret: change_me_long_random_string
+
+targets:
+  - id: swagbucks
+    enabled: true
+    referral_code: "YOUR_SWAGBUCKS_CODE"
+    payout_per_signup_usd: 5.0
+    requires_sms: false
+    requires_email_verify: true
+
+  - id: inboxdollars
+    enabled: true
+    referral_code: "YOUR_INBOXDOLLARS_CODE"
+    payout_per_signup_usd: 1.0
+    requires_sms: false
+    requires_email_verify: true
+
+  - id: freecash
+    enabled: false
+    referral_code: "YOUR_FREECASH_CODE"
+    payout_per_signup_usd: 2.0
+    requires_sms: false
+    requires_email_verify: true
+
+  - id: idle_empire
+    enabled: false
+    referral_code: "YOUR_IDLE_EMPIRE_CODE"
+    payout_per_signup_usd: 1.0
+    requires_sms: false
+    requires_email_verify: true
+
+  - id: timebucks
+    enabled: false
+    referral_code: "YOUR_TIMEBUCKS_CODE"
+    payout_per_signup_usd: 1.0
+    requires_sms: false
+    requires_email_verify: true
+
+  - id: paidviewpoint
+    enabled: false
+    referral_code: "YOUR_PVP_CODE"
+    payout_per_signup_usd: 1.0
+    requires_sms: false
+    requires_email_verify: true
+
+  - id: ysense
+    enabled: false
+    referral_code: "YOUR_YSENSE_CODE"
+    payout_per_signup_usd: 2.0
+    requires_sms: false
+    requires_email_verify: true
+
+  - id: prizerebel
+    enabled: false
+    referral_code: "YOUR_PRIZEREBEL_CODE"
+    payout_per_signup_usd: 1.0
+    requires_sms: false
+    requires_email_verify: true
