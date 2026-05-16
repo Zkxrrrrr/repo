@@ -1,0 +1,22 @@
+{
+  "telegram": {
+    "enabled": false,
+    "bot_token": "",
+    "chat_id": ""
+  },
+  "use_proxies": true,
+  "headless": true,
+  "max_concurrent_browsers": 4,
+  "withdrawal_threshold_usd": 5.0,
+  "btc_payout_address": "",
+  "ltc_payout_address": "",
+  "doge_payout_address": "",
+  "accounts": [
+    {
+      "label": "rig01",
+      "email": "youralias+rig01@protonmail.com",
+      "password": "REPLACE_ME",
+      "sites": ["firefaucet", "coinpayu", "freebitco", "cointiply"]
+    }
+  ]
+}
